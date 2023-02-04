@@ -1,0 +1,17 @@
+cd
+ls
+mkdir
+rmdir
+rm
+mv
+cp
+echo
+cat
+less
+head
+tail
+grep
+find
+sort
+uniq
+wc
