@@ -1,10 +1,7 @@
 import sys
-import pandas
-import os
+import pandas as pd
 
-# print(sys.argv)
 
-# day = sys.argv[1]
-# print(day)
-
-print('/t '.join(os.listdir()))
+if len(sys.argv) > 1:
+    day = sys.argv[1]
+    print(f'Job finished successfully for {=day}')
