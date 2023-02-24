@@ -1,0 +1,6 @@
+ipykernel
+pandas
+pyarrow
+requests
+sqlalchemy
+psycopg2-binary
