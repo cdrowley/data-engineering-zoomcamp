@@ -1,28 +1,27 @@
-.PHONY: fresh build clean save up down
+.PHONY: fresh build save _create_env up down clean
 
 ### Local Python Environment ###
 fresh:
-	make clean; \
-	set -e; \
-	python -m venv venv; \
-	source venv/bin/activate; \
-	pip install --upgrade pip; \
-	pip install -r requirements.in;
+	$(MAKE) _create_venv REQUIREMENTS=requirements.in
 build:
+	$(MAKE) _create_venv REQUIREMENTS=requirements.txt
+save:
+	venv/bin/pip freeze > requirements.txt
+
+_create_venv:
+	rm -rf venv; \
 	set -e; \
-	make clean; \
 	python -m venv venv; \
 	source venv/bin/activate; \
 	pip install --upgrade pip; \
-	pip install -r requirements.txt;
-clean:
-	rm -rf venv;
-save:
-	pip freeze > requirements.txt;
-
+	pip install -r $(REQUIREMENTS);
 
 ### Docker Environment ###
 up:
 	docker-compose up -d --build;
 down:
 	docker-compose down;
+clean:
+	docker system prune -f
+	docker-compose stop
+	docker rmi `docker images -a -q`

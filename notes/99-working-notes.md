@@ -3,7 +3,20 @@
 docker build -t test:pandas .
 docker run -it test:pandas 2022-01-01
 docker ps
+DockerFile:
+```
+FROM python:3.11
 
+RUN pip install --upgrade pip
+RUN pip install pandas
+
+WORKDIR /app
+COPY pipeline.py pipeline.py
+
+ENTRYPOINT [ "python", "pipeline.py" ]
+```
+
+pipeline.py:
 ```
 import sys
 import pandas as pd

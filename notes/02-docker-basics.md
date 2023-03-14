@@ -54,21 +54,10 @@ dpage/pgadmin4:latest
 ```
 
 ### Custom Python Container
-Example Dockerfile:
+Build the image 
 ```
-FROM python:3.11
-
-WORKDIR /app
-
-RUN pip install --upgrade pip
-COPY requirements.txt requirements.txt
-RUN pip install -r requirements.txt
-
-COPY upload-trips.py upload-trips.py
-ENTRYPOINT [ "python", "upload-trips.py" ]
+docker build -t upload-trips:v001 .
 ```
-
-Build the image `docker build -t upload-trips:v001 .`
 
 Run the image, in interactive mode, passing in command lines arguments to the python script:
 ```

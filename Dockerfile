@@ -1,9 +1,10 @@
 FROM python:3.11
 
-RUN pip install --upgrade pip
-RUN pip install pandas
-
 WORKDIR /app
-COPY pipeline.py pipeline.py
 
-ENTRYPOINT [ "python", "pipeline.py" ]
+RUN pip install --upgrade pip
+COPY requirements.txt requirements.txt
+RUN pip install -r requirements.txt
+
+COPY upload-trips.py upload-trips.py
+ENTRYPOINT [ "python", "upload-trips.py" ]

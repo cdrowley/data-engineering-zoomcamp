@@ -24,6 +24,7 @@ services:
       - ./.pgadmin:/var/lib/pgadmin:rw
 networks:
   pg-network:
+    name: pg-network
 volumes:
   .db:
   .pgadmin:
