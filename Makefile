@@ -1,5 +1,6 @@
 .PHONY: fresh build save _create_env up down clean
 
+
 ### Local Python Environment ###
 fresh:
 	$(MAKE) _create_venv REQUIREMENTS=requirements.in
@@ -15,6 +16,7 @@ _create_venv:
 	source venv/bin/activate; \
 	pip install --upgrade pip; \
 	pip install -r $(REQUIREMENTS);
+
 
 ### Docker Environment ###
 up:
