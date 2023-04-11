@@ -1,5 +1,6 @@
 # Custom
-.secrets
+.secrets/
+.terraform/
 .env
 .DS_Store
 .db
@@ -134,3 +135,4 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+.terraform.lock.hcl

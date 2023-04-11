@@ -8,4 +8,4 @@ RUN pip install -r requirements.txt
 
 COPY upload_trips.py upload_trips.py
 COPY useful_pandas.py useful_pandas.py
-ENTRYPOINT [ "python", "upload-trips.py" ]
+ENTRYPOINT [ "python", "upload_trips.py" ]
