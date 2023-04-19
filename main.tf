@@ -48,3 +48,5 @@ resource "google_bigquery_dataset" "dataset" {
   location   = var.region
   default_table_expiration_ms = 2419200000 # 4 weeks
 }
+
+# COMPUTE VM

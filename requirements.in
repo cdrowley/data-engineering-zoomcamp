@@ -4,3 +4,8 @@ pyarrow
 requests
 sqlalchemy
 psycopg2-binary
+prefect
+prefect-sqlalchemy
+prefect-gcp[cloud_storage]
+protobuf
+pandas-gbq

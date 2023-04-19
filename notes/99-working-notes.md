@@ -32,3 +32,30 @@ python -m http.server 8080
 
 ##### use pgcli to connect to postgres:
 pgcli -h localhost -p 5432 -U postgres -d ny_taxi
+
+
+#### Generate SSH Key
+- ssh-keygen -t rsa -f ~/.ssh/xiaodouzi821 -C xiaodouzi821 -b 2048
+- cat /Users/clivedrowley/.ssh/xiaodouzi821.pub
+### Connect to a remote server
+- copy the public key to the remote server (metadata on gcp vm)
+- ssh -i ~/.ssh/xiaodouzi821 xiaodouzi821@34.22.181.203
+- useful cmds:
+  - htop
+  - gcloud --version
+
+Can save a config at `~/.ssh/config` and use `ssh nyc-taxi-data-dez`
+```
+Host nyc-taxi-data-dez
+    HostName vm.external.ip.address
+    User xiaodouzi821
+    IdentityFile ~/.ssh/xiaodouzi821
+```
+- Install Docker `sudo apt-get install docker.io`
+- Install Docker Compose `sudo apt-get install docker-compose` 
+  - or `wget` from gh releases
+  - `chmod +x` to make it executable
+  - `nano .bashrc` and add `export PATH="${HOME}/bin:${PATH}"`
+
+
+

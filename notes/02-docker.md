@@ -1,3 +1,7 @@
+#### What is Docker?
+- Docker is a set of platform as a service products that use OS-level virtualization to deliver software in packages called containers.
+- Docker is a tool designed to make it easier to create, deploy, and run applications by using containers.
+
 #### Install Docker
 - [Follow these instructions](https://docs.docker.com/install/)
 
